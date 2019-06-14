@@ -1,0 +1,19 @@
+#app
+  .title
+    h1 Google
+    input(value="Thanos")
+  hr
+  .search
+    h1 About {{ (bookdata.length)- (result.length) }} results
+  .leftcontent(v-for="(book,id) in books" v-bind:id="'book'+id")
+    a(v-bind:href="book.net",target="_blank" ) {{book.title}}
+    a.net(v-bind:href="book.net",target="_blank") {{book.net}}
+      span
+        i.fas.fa-caret-down(v-if="!(book.net).length==0")
+    p.content {{book.content}}
+  .rightcontent
+    .pic(v-if="!((result.length) == (bookdata.length))" v-on:click="clickpic") 
+      p.click Click Me
+    .pic(v-if="((result.length) == (bookdata.length))" v-on:click="reclick" v-bind:style="'background-image:url('+'https://p3d.in/model_data/snapshot/uV1Ev'+')'")
+      p.click2 Click Me
+    

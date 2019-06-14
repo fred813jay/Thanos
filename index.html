@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta property="og:image" content="https://www.google.com/logos/fnbx/thanos/thanos_idle.png">
+  <meta name="description" content="Thanos">
+  <meta name="author" content="Eason Peng">
+  <title>Thanos 2</title>
+  
+  
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+
+      <link rel="stylesheet" href="./style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div id="app">
+  <div class="title">
+    <h1>Google</h1>
+    <input value="Thanos"/>
+  </div>
+  <hr/>
+  <div class="search">
+    <h1>About {{ (bookdata.length)- (result.length) }} results</h1>
+  </div>
+  <div class="leftcontent" v-for="(book,id) in books" v-bind:id="'book'+id"><a v-bind:href="book.net" target="_blank">{{book.title}}</a><a class="net" v-bind:href="book.net" target="_blank">{{book.net}}<span><i class="fas fa-caret-down" v-if="!(book.net).length==0"></i></span></a>
+    <p class="content">{{book.content}}</p>
+  </div>
+  <div class="rightcontent">
+    <div class="pic" v-if="!((result.length) == (bookdata.length))" v-on:click="clickpic"> 
+      <p class="click">Click Me</p>
+    </div>
+    <div class="pic" v-if="((result.length) == (bookdata.length))" v-on:click="reclick" v-bind:style="'background-image:url('+'https://p3d.in/model_data/snapshot/uV1Ev'+')'">
+      <p class="click2">Click Me</p>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+
+  
+
+    <script  src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>
